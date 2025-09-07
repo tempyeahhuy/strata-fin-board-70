@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Sidebar } from "./Sidebar";
 import { TopNavigation } from "./TopNavigation";
 import { FloatingActionButton } from "./widgets/FloatingActionButton";
+import { useFont } from "@/hooks/useFont";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -9,9 +10,10 @@ interface DashboardLayoutProps {
 
 export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const { currentFont } = useFont();
 
   return (
-    <div className="min-h-screen bg-background font-inter">
+    <div className={`min-h-screen bg-background ${currentFont.class}`}>
       <div className="flex">
         <Sidebar 
           collapsed={sidebarCollapsed} 

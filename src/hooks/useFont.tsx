@@ -29,13 +29,9 @@ export const useFont = () => {
   }, []);
 
   useEffect(() => {
-    // Update CSS custom property
-    document.documentElement.style.setProperty('--font-family', `${currentFont.value === 'inter' ? 'Inter' : 
-      currentFont.value === 'geist' ? 'Geist' :
-      currentFont.value === 'satoshi' ? 'Satoshi' :
-      currentFont.value === 'jakarta' ? 'Plus Jakarta Sans' :
-      currentFont.value === 'outfit' ? 'Outfit' :
-      'Space Grotesk'}, sans-serif`);
+    // Apply font class to body for global effect
+    document.body.className = document.body.className.replace(/font-\w+/g, '');
+    document.body.classList.add(currentFont.class);
     
     // Save to localStorage
     localStorage.setItem('dashboard-font', currentFont.value);
