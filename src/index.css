@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AdminFlow Dashboard Design System - New Color Palette Applied
+All colors MUST be HSL format for consistent theming
+Palette: #ffffff, #f6f7fb, #d5d6ea, #8da0d6, #3959a5, #1d2756
+*/
+
+@layer base {
+  :root {
+    /* Core Dashboard Colors - New Palette */
+    --background: 0 0% 100%;                        /* #ffffff - White background */
+    --foreground: 225 49% 23%;                      /* #1d2756 - Dark navy text */
+
+    /* Card System */
+    --card: 225 33% 97%;                            /* #f6f7fb - Light grey card background */
+    --card-foreground: 225 49% 23%;                 /* #1d2756 - Dark navy text */
+    --card-hover: 237 35% 92%;                      /* Lighter version of #d5d6ea */
+
+    /* Dashboard Surfaces */
+    --dashboard-surface: 225 33% 97%;               /* #f6f7fb - Main surface color */
+    --dashboard-accent: 237 35% 87%;                /* #d5d6ea - Light bluish-grey accents */
+    --dashboard-border: 237 35% 87%;                /* #d5d6ea - Borders */
+    --dashboard-separator: 237 35% 90%;             /* Lighter separator */
+
+    /* Interactive Elements */
+    --primary: 221 49% 44%;                         /* #3959a5 - Primary blue */
+    --primary-foreground: 0 0% 100%;                /* White text on primary */
+    --primary-hover: 221 49% 38%;                   /* Darker blue on hover */
+
+    --secondary: 227 52% 69%;                       /* #8da0d6 - Medium blue-grey */
+    --secondary-foreground: 0 0% 100%;              /* White text on secondary */
+    --secondary-hover: 227 52% 62%;                 /* Darker on hover */
+
+    /* Status & Feedback Colors */
+    --success: 142 76% 36%;                         /* Green for positive actions */
+    --success-foreground: 0 0% 100%;                /* White text on success */
+    --warning: 38 92% 50%;                          /* Orange for warnings */
+    --warning-foreground: 0 0% 100%;                /* White text on warning */
+    --destructive: 0 84% 60%;                       /* Red for dangerous actions */
+    --destructive-foreground: 0 0% 100%;            /* White text on destructive */
+
+    /* Navigation & Sidebar */
+    --sidebar-background: 0 0% 100%;                /* #ffffff - White sidebar */
+    --sidebar-foreground: 225 49% 23%;              /* #1d2756 - Dark navy text */
+    --sidebar-primary: 221 49% 44%;                 /* #3959a5 - Primary blue for active */
+    --sidebar-primary-foreground: 0 0% 100%;        /* White text on active */
+    --sidebar-accent: 225 33% 97%;                  /* #f6f7fb - Light grey accent */
+    --sidebar-accent-foreground: 225 49% 23%;       /* #1d2756 - Dark text on accent */
+    --sidebar-border: 237 35% 87%;                  /* #d5d6ea - Border color */
+    --sidebar-ring: 221 49% 44%;                    /* #3959a5 - Focus ring */
+
+    /* Form Elements */
+    --input: 225 33% 97%;                           /* #f6f7fb - Input background */
+    --input-foreground: 225 49% 23%;                /* #1d2756 - Input text */
+    --border: 237 35% 87%;                          /* #d5d6ea - General borders */
+    --ring: 221 49% 44%;                            /* #3959a5 - Focus rings */
+
+    /* Utility Colors */
+    --muted: 237 35% 87%;                           /* #d5d6ea - Muted backgrounds */
+    --muted-foreground: 227 52% 69%;                /* #8da0d6 - Muted text */
+    --accent: 225 33% 97%;                          /* #f6f7fb - Accent color */
+    --accent-foreground: 225 49% 23%;               /* #1d2756 - Text on accent */
+
+    /* Popover & Overlays */
+    --popover: 0 0% 100%;                           /* #ffffff - White popover */
+    --popover-foreground: 225 49% 23%;              /* #1d2756 - Dark text in popover */
+
+    /* Design System Variables */
+    --radius: 0.75rem;                              /* Rounded corners */
+    --shadow-soft: 0 1px 3px 0 rgb(29 39 86 / 0.1), 0 1px 2px -1px rgb(29 39 86 / 0.1);
+    --shadow-medium: 0 4px 6px -1px rgb(29 39 86 / 0.1), 0 2px 4px -2px rgb(29 39 86 / 0.1);
+    --shadow-large: 0 10px 15px -3px rgb(29 39 86 / 0.1), 0 4px 6px -4px rgb(29 39 86 / 0.1);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221 49% 44%), hsl(227 52% 69%));
+    --gradient-card: linear-gradient(135deg, hsl(225 33% 97%), hsl(0 0% 100%));
+    --gradient-accent: linear-gradient(135deg, hsl(237 35% 87%), hsl(225 33% 97%));
+
+    /* Animations */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Dark mode with proper contrast and modern dark theme colors */
+    --background: 222 84% 5%;                       /* Very dark blue-black #0a0e27 */
+    --foreground: 210 40% 98%;                      /* Almost white #f8fafc */
+    
+    --card: 222 84% 8%;                             /* Dark card background #141b3c */
+    --card-foreground: 210 40% 98%;                 /* Light text on cards */
+    --card-hover: 222 84% 10%;                      /* Lighter hover state */
+    
+    --popover: 222 84% 8%;                          /* Dark popover */
+    --popover-foreground: 210 40% 98%;              /* Light text in popover */
+    
+    --primary: 217 91% 60%;                         /* Bright blue #3b82f6 */
+    --primary-foreground: 222 84% 5%;               /* Dark text on primary */
+    --primary-hover: 217 91% 55%;                   /* Darker blue on hover */
+    
+    --secondary: 217 32% 17%;                       /* Dark secondary #1e293b */
+    --secondary-foreground: 210 40% 98%;            /* Light text on secondary */
+    --secondary-hover: 217 32% 20%;                 /* Lighter on hover */
+    
+    --success: 142 76% 36%;                         /* Green for success */
+    --success-foreground: 210 40% 98%;              /* Light text on success */
+    
+    --warning: 38 92% 50%;                          /* Orange for warnings */
+    --warning-foreground: 222 84% 5%;               /* Dark text on warning */
+    
+    --destructive: 0 84% 60%;                       /* Red for errors */
+    --destructive-foreground: 210 40% 98%;          /* Light text on destructive */
+    
+    --muted: 215 28% 17%;                           /* Muted dark background #1e293b */
+    --muted-foreground: 215 20% 65%;                /* Muted text #94a3b8 */
+    
+    --accent: 217 32% 17%;                          /* Accent color */
+    --accent-foreground: 210 40% 98%;               /* Light text on accent */
+    
+    --border: 215 28% 17%;                          /* Border color */
+    --input: 215 28% 17%;                           /* Input background */
+    --ring: 217 91% 60%;                            /* Focus ring color */
+    
+    /* Dashboard specific dark colors */
+    --dashboard-surface: 222 84% 8%;                /* Main surface */
+    --dashboard-accent: 215 28% 17%;                /* Accents */
+    --dashboard-border: 215 28% 17%;                /* Borders */
+    --dashboard-separator: 215 28% 15%;             /* Separators */
+    
+    /* Sidebar dark colors */
+    --sidebar-background: 222 84% 6%;               /* Darker sidebar #0f1629 */
+    --sidebar-foreground: 210 40% 98%;              /* Light text */
+    --sidebar-primary: 217 91% 60%;                 /* Bright blue primary */
+    --sidebar-primary-foreground: 222 84% 5%;       /* Dark text on primary */
+    --sidebar-accent: 215 28% 17%;                  /* Sidebar accent */
+    --sidebar-accent-foreground: 210 40% 98%;       /* Light text on accent */
+    --sidebar-border: 215 28% 17%;                  /* Sidebar border */
+    --sidebar-ring: 217 91% 60%;                    /* Sidebar focus ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+
+  /* Dashboard-specific utilities */
+  .dashboard-card {
+    @apply bg-card rounded-xl shadow-[var(--shadow-soft)] border border-dashboard-border transition-[var(--transition-fast)] hover:shadow-[var(--shadow-medium)];
+  }
+
+  .dashboard-card-hover {
+    @apply hover:bg-card-hover;
+  }
+
+  .dashboard-gradient {
+    background: var(--gradient-card);
+  }
+
+  .dashboard-accent-gradient {
+    background: var(--gradient-accent);
+  }
+}
