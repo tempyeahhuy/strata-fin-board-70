@@ -15,7 +15,12 @@ export default {
     extend: {
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'geist': ['Geist', 'sans-serif'],
+        'satoshi': ['Satoshi', 'sans-serif'],
+        'jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+        'outfit': ['Outfit', 'sans-serif'],
+        'space': ['Space Grotesk', 'sans-serif'],
+        'sans': ['var(--font-family)', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

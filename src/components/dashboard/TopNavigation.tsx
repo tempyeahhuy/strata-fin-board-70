@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { FontToggle } from "@/components/ui/font-toggle";
 import { 
   DropdownMenu, 
   DropdownMenuContent, 
@@ -17,7 +18,7 @@ interface TopNavigationProps {
 
 export const TopNavigation = ({ onToggleSidebar }: TopNavigationProps) => {
   return (
-    <header className="h-20 bg-background border-b border-dashboard-border px-6 flex items-center justify-between">
+    <header className="sticky top-0 z-50 h-20 bg-background border-b border-dashboard-border px-6 flex items-center justify-between">
       {/* Left section */}
       <div className="flex items-center space-x-4">
         <Button
@@ -41,6 +42,9 @@ export const TopNavigation = ({ onToggleSidebar }: TopNavigationProps) => {
 
       {/* Right section */}
       <div className="flex items-center space-x-4">
+        {/* Font Toggle */}
+        <FontToggle />
+
         {/* Theme Toggle */}
         <ThemeToggle />
 

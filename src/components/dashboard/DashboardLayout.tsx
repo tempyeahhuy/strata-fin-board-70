@@ -18,12 +18,12 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           onToggleCollapsed={() => setSidebarCollapsed(!sidebarCollapsed)} 
         />
         
-        <div className={`flex-1 transition-all duration-300 ${
+        <div className={`flex-1 flex flex-col transition-all duration-300 ${
           sidebarCollapsed ? 'ml-16' : 'ml-64'
         }`}>
           <TopNavigation onToggleSidebar={() => setSidebarCollapsed(!sidebarCollapsed)} />
           
-          <main className="p-6 bg-dashboard-surface min-h-[calc(100vh-80px)]">
+          <main className="flex-1 p-6 bg-dashboard-surface overflow-auto">
             {children}
           </main>
         </div>
